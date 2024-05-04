@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest</title>
+    <link rel="stylesheet" href="../static/css/indexpage.css">
+    <style>
+        body {
+        background-image: url('../static/images/h2.jpg');
+        height: 110vh;
+        width:190vh;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        
+    }
+    
+    header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 100px;
+        background: #acb4b5;
+    }
+    
+    .logo{
+        font-size: 32px;
+        font-weight: bold;
+        color: #213032;
+        margin-right: 40px;
+    }
+    .nav-bar ul{
+        display: flex;
+        list-style: none;
+    }
+    .nav-bar ul li a{
+        display: block;
+        color: #edffef;
+        font-size: 20px;
+        padding: 8px 25px;
+        transition: .2s;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+    .nav-bar ul li:hover a{
+        background-color: #97a2a3;
+        color: #213032;
+        cursor: pointer;
+    }
+
+        .search-bar {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .subscribe-btn {
+    background-color: #3904cc;
+    color: white;
+    padding: 1em 0.5em;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    border-radius: 10px;
+}
+.subscribe-btn button:hover{
+    background-color: navy;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduQuest</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="/index">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <h1 style="color: white;">Welcome to the Student Dashboard</h1>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search for courses...">
+        <button class="search-btn" onclick="searchCourses()">Search</button>
+    </div>
+    
+    <div class="container">
+        {% for course in courses %}
+        <div class="course">
+            <h3>{{ course.name }}</h3>
+            <img src="../static/images/images.png" alt="Course">
+            <br>
+            <p>Price: {{ course.price }}</p>
+            <p>Duration: {{ course.duration }} weeks</p>
+            <button class="subscribe-btn" onclick="toggleSubscribe(this)">Register</button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function toggleSubscribe(button) {
+            if (button.innerText === 'Register') {
+                button.innerText = 'Get Started';
+            } else {
+                button.innerText = 'Register';
+            }
+        }
+
+        function searchCourses() {
+            var input, filter, courses, course, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            courses = document.getElementsByClassName('course');
+
+            for (i = 0; i < courses.length; i++) {
+                course = courses[i];
+                txtValue = course.textContent || course.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    course.style.display = '';
+                } else {
+                    course.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

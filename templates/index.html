@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EduQuest</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href={{ url_for('static',filename="style.css")}}>
+  <style>
+    body {
+        background-image: url('../static/images/h3.jpg');
+        height: 110vh;
+        width:190vh;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        
+    }
+    h1{
+    color:#0a0809df;
+    font-size: 35px;
+    font-family: "Imprint MT Shadow"
+}
+    header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 100px;
+        background: #acb4b5;
+    }
+    .hero{
+        height: 100vh;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .logo{
+        font-size: 32px;
+        font-weight: bold;
+        color: #213032;
+        margin-right: 40px;
+    }
+    .nav-bar ul{
+        display: flex;
+        list-style: none;
+    }
+    .nav-bar ul li a{
+        display: block;
+        color: #edffef;
+        font-size: 20px;
+        padding: 8px 25px;
+        transition: .2s;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+    .nav-bar ul li:hover a{
+        background-color: #97a2a3;
+        color: #213032;
+        cursor: pointer;
+    }
+    .content{
+        width: 45%;
+        margin: 15% 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    button{
+    background-color: #3904cc;
+    color: white;
+    padding: 1em 0.5em;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: navy;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+        
+        <div class="logo">EduQuest</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/base_student">Student Login</a></li>
+                <li><a href="/base_teacher">Teacher Login</a></li>
+                <li><a href="/index">Logout</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="content">
+            
+            <h1>Unlock your potential, one click at a time. Embrace learning, empower growth, and enrich your journey with our <b>EduQuest</b> </h1>
+            <a href="/base_student"><button >Begin Your Quest</button></a>
+            
+            
+            
+           
+            
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest</title>
+    <link rel="stylesheet" href="../static/css/indexpage.css">
+    <style>
+         body {
+        background-image: url('../static/images/h2.jpg');
+        height: 110vh;
+        width:190vh;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        
+    }
+    
+    header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 100px;
+        background: #acb4b5;
+    }
+    
+    .logo{
+        font-size: 32px;
+        font-weight: bold;
+        color: #213032;
+        margin-right: 40px;
+    }
+    .nav-bar ul{
+        display: flex;
+        list-style: none;
+    }
+    .nav-bar ul li a{
+        display: block;
+        color: #edffef;
+        font-size: 20px;
+        padding: 8px 25px;
+        transition: .2s;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+    .nav-bar ul li:hover a{
+        background-color: #97a2a3;
+        color: #213032;
+        cursor: pointer;
+    }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .course {
+            position: relative;
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .course img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .delete-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            background-color: #cc0000;
+        }
+        .add-course-form {
+          width: 30%;
+          margin: 5% 40%;
+          text-align: center;
+          border: 2px solid black;
+          padding: 3em;
+          border-radius: 1em;
+          background-color: white;
+            margin-bottom: 20px;
+            
+          }
+        .add-course-form input {
+            margin: 5px;
+            padding: 5px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .add-course-form button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-course-form button:hover {
+            background-color: #0056b3;
+        }
+        h1{
+    color:#0b0b0bdf
+}
+h3{
+  color: grey;
+}
+
+input[type=email], input[type=password],input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #278da6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduQuest</div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="/teacher_dashboard">Teacher's Dashboard</a></li>
+                <li><a href="/index">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <form class="add-course-form" action="/add_course" method="post">
+      <h1>EduQuest</h1>
+      <h1>Add New Course</h1>
+      <div class="container">
+          <label for="uname"><b>Course</b></label>
+          <input type="text" name="name" placeholder="Course name" required>
+
+          <label for="email"><b>Price</b></label>
+          <input type="number" name="price" placeholder="Price" required>
+          
+          <label for="pwd"><b>Duration</b></label>
+          <input type="number" name="duration" placeholder="Duration (weeks)" required>
+          
+          <button type="submit">Add Course</button>
+      </div>
+      
+  </form>
+    
+    
+    <script>
+        function deleteCourse(courseId) {
+            // Send a request to delete the course with the given ID
+            // You can use JavaScript's Fetch API or other methods to send an AJAX request
+            // For example:
+            fetch('/delete_course/' + courseId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ courseId: courseId })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Reload the page after deletion
+                    location.reload();
+                } else {
+                    console.error('Failed to delete course');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

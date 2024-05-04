@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EduQuest</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+        background-image: url('../static/images/h2.jpg');
+        height: 110vh;
+        width:190vh;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        
+    }
+    
+    header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 100px;
+        background: #acb4b5;
+    }
+    
+    .logo{
+        font-size: 32px;
+        font-weight: bold;
+        color: #213032;
+        margin-right: 40px;
+    }
+    .nav-bar ul{
+        display: flex;
+        list-style: none;
+    }
+    .nav-bar ul li a{
+        display: block;
+        color: #edffef;
+        font-size: 20px;
+        padding: 8px 25px;
+        transition: .2s;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+    .nav-bar ul li:hover a{
+        background-color: #97a2a3;
+        color: #213032;
+        cursor: pointer;
+    }
+    .Verify{
+    width: 50%;
+    margin: 5% 30%;
+    text-align: center;
+    border: 2px solid black;
+    padding: 3em;
+    border-radius: 1em;
+    border: 2px solid blue;
+}
+h1{
+    font-family: "Imprint MT Shadow"
+}
+h4{
+  
+  text-align: center;
+}
+button{
+    background-color: #3904cc;
+    color: white;
+    padding: 1em 0.5em;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: navy;
+}
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EduQuest</div>
+        <div class="nav-bar">
+            <ul>
+              <li><a href="/index">Home</a></li>
+              <li><a href="/base_student">Student Login</a></li>
+              <li><a href="/base_teacher">Teacher Login</a></li>
+              <li><a href="/index">Logout</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="Verify">
+      <h1> Welcome to EduQuest: Your Pathway to Knowledge Exploration </h1>
+      <h4>At EduQuest, we believe that learning knows no bounds. Our online platform is dedicated to providing a transformative educational experience that empowers learners of all ages and backgrounds to explore, discover, and grow.</h4>
+      <h4>What sets EduQuest apart is our commitment to innovation, accessibility, and excellence in education. With a diverse range of courses spanning various subjects and skill levels, we cater to the evolving needs of today's learners. Whether you're a student looking to supplement your studies, a professional seeking to upskill, or an enthusiast eager to delve into new interests, EduQuest has something for you.</h4>
+      <h4>Our curated collection of courses is created and taught by experts in their respective fields, ensuring that you receive top-quality instruction and guidance every step of the way. From interactive video lectures to hands-on projects and assessments, our engaging learning materials are designed to inspire curiosity and foster deep understanding.</h4>
+      <h4>Join us at EduQuest and embark on a journey of discovery, growth, and lifelong learning. Whether you're taking your first steps or advancing your expertise, let us be your trusted companion in the pursuit of knowledge.</h4>
+      <h1>Start your quest today.</h1>
+      <a href="/base_student"><button >Embark Now</button></a>
+
+
+    </div>
+
+</body>
+</html>
