@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color:bisque;
+}
+*{
+    font-family:cursive;
+    text-align: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.course {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color:white;
+    margin:10px;
+}
+img{
+    width:400px;
+    height:50vh;
+}
